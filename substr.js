@@ -16,12 +16,13 @@ function hasSubstring(str, substr) {
   for (let i = 0; i < str.length; i++) {
     var char = str[i]
     if (state === substr.length) {
-      console.log(state)
       status = true
       break
     }
     if (char === substr[state]) {
       state++
+    } else {
+      state = 0
     }
   }
 

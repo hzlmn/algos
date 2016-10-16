@@ -4,26 +4,42 @@
 class Stack {
   constructor(max) {
     this.stack = []
-    this.max = max
+    this.stackMaxSize = max
   }
 
+  /**
+   * Add to stack
+   */
   push(value) {
-    if (max && this.stack.length >= this.max) {
-      throw new Error('Out of range')
-    } else {
+    if (!this.isFull()) {
       this.stack.push(value)
     }
   }
 
+  /**
+   * Pop element from stack
+   */
   pop() {
     return this.stack.pop()
   }
 
+  /**
+   * Check if stack is full
+   */
   isFull() {
-    if (!this.max) {
+    if (!this.stackMaxSize) {
       return false
     }
 
-    return this.stack.length >= this.max
+    return this.stack.length >= this.stackMaxSize
+  }
+
+  /**
+   * Check if stack is empty
+   */
+  isEmpty() {
+    return !this.stack.length
   }
 }
+
+module.exports = Stack

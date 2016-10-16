@@ -11,7 +11,7 @@ function isNumber(value) {
  * Should be optimized
  */
 function isNumberH(value) {
-  var chars = '.0123456789'
+  var chars = '0123456789'
   var dotHappened = false
   var status = true
 

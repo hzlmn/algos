@@ -2,20 +2,18 @@
  * Abstract queue data structure
  */
 class Queue {
-  constructor(maxSize) {
+  constructor(queueMaxSize) {
     this.queue = []
-    this.maxSize = maxSize
+    this.queueMaxSize = queueMaxSize
   }
 
   /**
    * Add element to queue
    */
   enqueue(value) {
-    if (this.isFull()) {
-      throw new Error('Out of range')
+    if (!this.queueIsFull()) {
+      this.queue.push(value)
     }
-
-    this.queue.push(value)
   }
 
   /**
@@ -28,7 +26,7 @@ class Queue {
   /**
    * Check if queue if full
    */
-  isFull() {
+  queueIsFull() {
     return this.queue.length >= this.maxSize
   }
 
