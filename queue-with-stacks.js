@@ -17,24 +17,16 @@ class Queue {
   }
 
   /**
-   * Transfer items from one stack to another
-   * and return populated stack
+   * Get element from queue
    */
-  populateStack() {
+  dequeue() {
     if (this.reversed.isEmpty()) {
       while (!this.stack.isEmpty()) {
         this.reversed.push(this.stack.pop())
       }
     }
 
-    return this.reversed
-  }
-
-  /**
-   * Get element from queue
-   */
-  dequeue() {
-    return this.populateStack().pop()
+    return this.reversed.pop()
   }
 }
 
